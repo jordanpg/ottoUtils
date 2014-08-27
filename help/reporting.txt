@@ -1,0 +1,53 @@
+helpv 0 Report
+
+CONTENT base
+	\c6Welcome to the \c3ottoUtils Reporting System\c6! (Version \c3@v(|$ottoUtils::ReportVersion|)\c6)
+	\c6This command can be used to manage aspects of the report system, user permissions, and get information.
+	\c6The syntax of this command is \c3/report \c2[cmd] \c5<parameters>
+	\c6For more detailed help, do \c3/report \c2help
+END CONTENT
+
+CONTENT help
+	\c6The report system is an administration tool that allows users to notify admins of problem behaviour.
+	\c6There are a few commands involved in the proper usage of this utility:
+	\c6+--\c3/startReport \c2[target BL_ID or playername]
+	\c6+--\c3/report \c2[cmd] \c5<parameters>
+	\c3==You may need to \c2PGUP \c3in order to see all that!==
+	\c6For help on a specific command, use \c3/report \c2help \c5<topic>
+END CONTENT
+
+CONTENT help.startReport
+ALIAS help./startReport
+	\c3/startReport \c2[target BL_ID or playername]
+	\c6Used to create a report on a specific player.
+	\c6Upon using the command, you will be prompted for a title.
+	\c6The title is a subject line, giving a very brief summary of the event.
+	\c6After giving a title, you will be asked to provide a more detailed summary.
+	\c3Keep in mind you only have \c5@v(|$ottoUtils::MaxLines|) \c3line@v(|($ottoUtils::MaxLines == 1 ? "" : "s")|) to work with!
+	\c6There are also some control commands in report mode. To use these, just do ![cmd] while making a report.
+	\c6Trying to use an unrecognised command will give you a list of available commands.
+END CONTENT
+
+CONTENT help.report
+ALIAS help./report
+	\c3/report \c2[cmd] \c5<parameters>
+	\c6Used to manage the report system and get help.
+	\c6Some parts of this command are restricted to administrator use only.
+	\c6Possible commands may include:
+	\c6+NR-\c2help \c5<topic> \c6: Used to access help topics
+	\c6+\c3AD\c6-\c2list \c6: Used to view all nonresolved reports.
+	\c6+\c3AD\c6-\c2by \c5[BL_ID] \c6: Used to view reports made by a specific user
+	\c6+\c3AD\c6-\c2of \c5[BL_ID] \c6: Used to view reports made about a specific user
+	\c6+\c3AD\c6-\c2view \c5[report ID] \c6: Used to view a specified report
+	\c6+\c0SA\c6-\c2users \c5<parameters> \c6: Used to manage special user priveleges
+	\c6+NR-\c2warriors \c6: Lists users with justice warrior priveleges
+	\c3==You may need to \c2PGUP \c3in order to see all that!==
+	\c6For help on a specific command, use \c3/report \c2help \c5mode [cmd]
+END CONTENT
+
+CONTENT help.mode.help
+	\c3help \c6command
+	\c6Used to receive help on specific topics.
+	\c6I don't think I have any more to tell you, mate.
+	\c6If you got here, you already know everything about this.
+END CONTENT
